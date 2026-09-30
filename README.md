@@ -7,153 +7,106 @@
 ![SA-MP](https://img.shields.io/badge/SA--MP-0.3.DL--R1-f0a83a?style=for-the-badge)
 ![CEF](https://img.shields.io/badge/CEF-not_required-7b61ff?style=for-the-badge)
 
-VelthyraMP, GTA San Andreas 1.0 US ve SA-MP 0.3.DL-R1 için dağıtılan bağımsız bir x86 ASI eklentisidir. CEF kullanmadan çalışan koyu temalı oyun içi panel; model önizleme, yakındaki model taraması, sohbet arşivi, ekran görüntüsü, HUD yardımcıları ve sunucu merkezi özelliklerini tek bir ASI dosyasında toplar.
+VelthyraMP, SA-MP oynarken kullandığım yardımcı sistemleri tek bir ASI dosyasında toplamak için hazırladığım bir moddur. Panel CEF ile açılmıyor; doğrudan oyun ekranının üzerine çiziliyor. Bu yüzden ayrıca tarayıcı, web paneli veya başka bir istemci moduna ihtiyaç duymuyor.
 
-VelthyraMP bağımsız çalışır. Kaynak kodu bu dağıtımda paylaşılmaz; kullanıcıya yalnızca derlenmiş velthyramp.asi dosyası sunulur.
+Bu sürüm yalnızca derlenmiş velthyramp.asi dosyasını içerir. Kaynak kodu bu depoda paylaşılmıyor.
 
-### Virüs/Malware Uyarısı Hakkında
-
-Bazı antivirüs programları `velthyramp.asi` dosyasını **Riskware**, **HackTool** veya **Trojan** benzeri kategorilerde işaretleyebilir. Bunun temel nedeni, ASI eklentilerinin GTA San Andreas’ın işlemine yüklenerek oyun belleğine ve oyun klasöründeki dosyalara erişmesi, Direct3D/SA-MP işlevlerine kanca eklemesi ve bazı ayar dosyalarını okuyup yazmasıdır.
-
-Bu davranışlar, kötü amaçlı yazılımların kullandığı tekniklere benzediği için bazı güvenlik yazılımları dosyayı davranışsal analiz sonucunda şüpheli olarak değerlendirebilir. Bu uyarı tek başına dosyanın kesin olarak virüs olduğu anlamına gelmez; ancak hiçbir binary dosya yalnızca açıklamasına bakılarak güvenli kabul edilmemelidir.
-
-Dosyayı kullanmadan önce:
-
-- Dosyanın yalnızca resmi GitHub Releases sayfasından indirildiğini kontrol edin.
-- Yayın sayfasındaki SHA-256 değeriyle indirdiğiniz dosyanın hash değerini karşılaştırın.
-- Dosyayı VirusTotal ve kullandığınız antivirüsün kendi analiz sistemiyle kontrol edin.
-- Kaynağı belirsiz, değiştirilmiş veya yeniden paketlenmiş ASI dosyalarını kullanmayın.
-- Şüpheli bir sonuç alırsanız dosyayı çalıştırmadan önce ilgili antivirüs sağlayıcısından yeniden analiz talep edin.
-
-VelthyraMP kapalı kaynak bir binary dağıtımıdır. Bu nedenle kullanıcılar dosyayı kendi güvenlik politikalarına ve kullandıkları antivirüs yazılımının sonuçlarına göre değerlendirmelidir. ChatGPT, Claude veya Gemini gibi yapay zekâ sistemleri açıklama ve statik inceleme konusunda yardımcı olabilir; ancak bir binary dosyanın virüssüz olduğunu kesin olarak doğrulayamaz.
-
-> Geliştirme durumu: Aktif geliştirme aşamasındadır. GTA belleğine ve SA-MP sürümüne bağlı özellikler, farklı ASI, CLEO ve grafik modlarıyla birlikte ayrıca test edilmelidir.
-
----
+> Şu an doğrulanan sürüm: GTA San Andreas US 1.0 ve SA-MP 0.3.DL-R1.
 
 ## İçindekiler
 
-- [Özellikler](#özellikler)
-- [Gereksinimler](#gereksinimler)
-- [Kurulum](#kurulum)
-- [Panel kullanımı](#panel-kullanımı)
-- [Model sistemi](#model-sistemi)
-- [Ayarlar ve veri dosyaları](#ayarlar-ve-veri-dosyaları)
-- [Dağıtım içeriği](#dağıtım-içeriği)
-- [Güvenlik ve gizlilik](#güvenlik-ve-gizlilik)
-- [Changelog](#changelog)
-- [Lisans ve destek](#lisans-ve-destek)
+- Neler var?
+- Kurulum
+- Paneli kullanma
+- Model ekleme ve önizleme
+- Ayar dosyaları
+- Antivirüs uyarısı
+- Sürüm notları
+- Lisans ve destek
 
----
+## Neler var?
 
-## Özellikler
+### /vmp paneli
 
-### Panel ve yerelleştirme
+Paneli açmak için sohbetten /vmp yazmanız yeterli. Menü koyu gri/siyah renklere göre tasarlandı; oyun sırasında gözü yormaması ve normal bir SA-MP menüsü gibi durması amaçlandı.
 
-- CEF gerektirmeyen Direct3D 9 tabanlı koyu tema.
-- ENG/TR dil seçimi ve kalıcı dil tercihi.
-- Fare, Tab, Enter ve Esc ile gezinme.
-- Türkçe klavye düzeni, Ctrl+A, Ctrl+V, Home/End ve ok tuşu desteği.
-- Panel durum mesajlarının seçilen dile göre gösterilmesi.
+Panelde ENG/TR düğmesi bulunuyor. İlk açılışta ENG geliyor. Dili değiştirdiğinizde seçim data/velthyramp.ini dosyasına yazılıyor; oyunu kapatıp açtığınızda tekrar dil seçmeniz gerekmiyor.
 
-### Model ve skin araçları
+### Yerel modeller
 
-- VelthyraModels klasöründeki DFF/TXD çiftlerini otomatik kataloglama.
-- Model adına göre arama ve liste filtreleme.
-- Dosya boyutu, dosya durumu ve DFF/TXD CRC bilgileri.
-- Modeli karaktere uygulamadan 3B önizleme.
-- Sol/sağ döndürme ve +/− yakınlaştırma kontrolleri.
-- Oyuncu ID'siyle görünür oyuncu skin bilgisi inceleme.
-- Model ID, CRC, DFF veya TXD adıyla sorgulama.
-- Seçilen modeli yalnızca kendi ekranında başka oyuncuya uygulama.
-- Orijinal yerel görünümü geri yükleme.
-- Standart 0–300 skinlerinin yanlışlıkla çıkarılmasını önleme.
+VelthyraModels klasöründeki DFF/TXD dosyaları panelde listelenir. Model adına göre arama yapabilir, dosya durumunu görebilir ve modeli karakterinize uygulamadan önce önizleyebilirsiniz.
+
+Önizleme ekranında modeli SOL ve SAĞ düğmeleriyle döndürebilir, + ile yaklaştırabilir ve − ile uzaklaştırabilirsiniz. Modeli giyme işlemi yalnızca sizin ekranınızda yapılır; sunucudaki gerçek skin ID'si değiştirilmez.
+
+### Oyuncu ve model bilgileri
+
+Oyuncu inceleme bölümünde görünen bir oyuncunun ID'sini girerek skin bilgilerini görebilirsiniz. Model ID'si, temel ID, DFF/TXD adı ve varsa CRC bilgileri panelde gösterilir.
+
+Model sorgulama bölümünde model ID'si, 0x ile başlayan CRC değeri veya DFF/TXD adı kullanılabilir. Standart GTA skinleri için dosyaların orijinal oyun arşivlerinde bulunduğu konum gösterilir.
 
 ### Yakındaki modeller
 
-- Yakındaki yüklenmiş oyuncu skinlerini ve SA-MP objelerini listeleme.
-- Mesafe, model ID'si, tür ve kaynak bilgisi.
-- Skin/obje görünürlüğü için bağımsız filtreler.
-- Negatif özel obje ID'lerini açma/kapatma.
-- Pozitif sunucu objelerini açma/kapatma.
-- GTA standart obje ID'lerini ayrı filtreleme.
-- Seçilen öğeyi önizleme ve ayrıntılarını görüntüleme.
+/vmp nearmodels komutu yakındaki oyuncu skinlerini ve SA-MP objelerini listeler. Seçilen öğenin ID'si, türü ve mesafesi gösterilir; desteklenen modeller önizleme alanında görüntülenir.
 
-### Oyun yardımcıları
+Yakındaki modeller için skinleri, objeleri, negatif ID'li özel objeleri, pozitif ID'li sunucu objelerini ve GTA standart obje ID'lerini ayrı ayrı filtreleyebilirsiniz.
 
-- F10 ile HUD gizleme ve tekrar gösterme.
-- FPS sınırı ve fare X/Y dengesi.
-- SA-MP diyalog seçimlerini hatırlama.
-- PNG ekran görüntüsünü koruma ve isteğe bağlı JPG/BMP kopyası.
-- Sohbet arşivi, günlük/oturum dosyası ve sohbet içinde arama.
-- Favori ve son sunucular için sunucu merkezi.
-- Bağlantı öncesi oyuncu adı girişi.
-- Çerçevesiz pencere ve hedef monitör seçimi.
+### Diğer yardımcılar
 
----
-
-## Gereksinimler
-
-- Windows 10 veya üzeri
-- GTA San Andreas US 1.0, 32 bit
-- SA-MP 0.3.DL-R1
-- Çalışan bir ASI loader
-- x86 ASI loader
-
-Eklenti yalnızca GTA San Andreas US 1.0 ve SA-MP 0.3.DL-R1 üzerinde doğrulanmıştır. x64 istemciler desteklenmez.
-
----
+- F10 ile HUD'u gizleme ve tekrar gösterme
+- FPS sınırını kaldırma
+- Fare X/Y hassasiyetini eşitleme
+- SA-MP diyaloglarında son seçimi hatırlama
+- Sohbeti günlük veya oturum dosyası olarak arşivleme
+- Sohbet arşivinde kelime arama
+- PNG ekran görüntüsünü koruma ve JPG/BMP kopyası oluşturma
+- Favori ve son sunucuları kaydetme
+- Bağlanmadan önce oyuncu adını yazma
+- Çerçevesiz pencere ve monitör seçimi
 
 ## Kurulum
 
-1. Release bölümünden yalnızca velthyramp.asi dosyasını indirin.
-2. Dosyayı gta_sa.exe dosyasının bulunduğu klasöre kopyalayın.
-3. Oyunu ve SA-MP'yi başlatın.
-4. Sohbette /vmp yazarak paneli açın.
-5. /vmp nearmodels ile Yakındaki modeller sayfasına geçin.
+1. Releases bölümünden velthyramp.asi dosyasını indirin.
+2. Dosyayı gta_sa.exe dosyasının bulunduğu klasöre atın.
+3. Oyunda çalışan bir x86 ASI loader bulunduğundan emin olun.
+4. GTA ve SA-MP'yi başlatın.
+5. Oyuna girdikten sonra /vmp komutunu deneyin.
 
-İlk çalıştırmada dil ENG olarak başlar. Sağ üstteki ENG düğmesine basıldığında TR seçimi data/velthyramp.ini dosyasına kaydedilir ve sonraki açılışlarda korunur.
+Güncelleme yaparken oyunu tamamen kapatın. Oyun açıkken Windows ASI dosyasını kullanımda tuttuğu için yeni dosya kopyalanamayabilir.
 
-Oyun çalışırken ASI değiştirmeyin. Windows dosyayı kullanımda tuttuğu için güncellemeden önce GTA'yı kapatın.
+## Paneli kullanma
 
----
-
-## Panel kullanımı
-
-| İşlem | Kullanım |
+| Yapmak istediğiniz | Kullanacağınız yer |
 |---|---|
-| Paneli aç | /vmp |
-| Yakındaki modeller | /vmp nearmodels |
-| Dil değiştir | Sağ üstteki ENG/TR düğmesi |
-| Modeli döndür | Sol / Sağ |
-| Modeli yakınlaştır | + |
-| Modeli uzaklaştır | − |
-| Paneli kapat | Esc veya × |
-| HUD gizle/göster | F10 |
+| Paneli açmak | /vmp |
+| Yakındaki modelleri açmak | /vmp nearmodels |
+| Dili değiştirmek | Sağ üstteki ENG/TR düğmesi |
+| Modeli döndürmek | SOL / SAĞ |
+| Modeli yaklaştırmak | + |
+| Modeli uzaklaştırmak | − |
+| HUD'u gizlemek | F10 |
+| Paneli kapatmak | Esc veya × |
 
 Yerel model uygulamaları yalnızca oyuncunun kendi ekranında görünür. Sunucunun gerçek skin, obje veya oyuncu verisi değiştirilmez.
 
----
+## Model ekleme ve önizleme
 
-## Model sistemi
-
-Yerel model klasöründe DFF ve TXD dosyalarının aynı ada sahip olması gerekir:
+Model dosyalarının isimleri aynı olmalıdır:
 
     gta_sa.exe
     ├── velthyramp.asi
     ├── VelthyraModels
-    │   ├── model_adi.dff
-    │   └── model_adi.txd
+    │   ├── mcallen1.dff
+    │   └── mcallen1.txd
     └── data
         └── velthyramp.ini
 
-Bir dosya çifti eksikse model hatalı görünür ve Giy işlemi devre dışı bırakılır. Önizleme, sunucunun gerçek skin ID'sini değiştirmeden yerel görüntü oluşturur.
+DFF veya TXD dosyasından biri eksikse model eksik görünür ve giyme düğmesi kullanılamaz. Model dosyaları sunucudan indirilmiş değilse panel bunları kendiliğinden oluşturmaz.
 
----
+Standart 0–300 arası GTA skinleri dışarı çıkarılmaz. Bu kontrol, orijinal oyun dosyalarının gereksiz yere kopyalanmasını önlemek için bulunuyor.
 
-## Ayarlar ve veri dosyaları
+## Ayar dosyaları
 
-VelthyraMP ayarları oyun klasöründeki data/velthyramp.ini içinde tutulur:
+Panel ayarları oyun klasöründeki data/velthyramp.ini dosyasına yazılır:
 
     language=eng
     fps_unlock=0
@@ -161,63 +114,58 @@ VelthyraMP ayarları oyun klasöründeki data/velthyramp.ini içinde tutulur:
     dialog_restore=0
     f10_hide=0
 
-Eksik veya bilinmeyen satırlar yok sayılır. Favori ve son sunucu kayıtları data/velthyramp_servers.dat dosyasındadır. Sohbet arşivi ve çıkarılan skinler SA-MP kullanıcı belgeleri altında tutulur.
+Dosya yoksa ilk çalıştırmada oluşturulur. Bilinmeyen veya bozuk satırlar yok sayılır; diğer ayarlar silinmez.
 
----
+Favori sunucular data/velthyramp_servers.dat içinde tutulur. Sohbet kayıtları ve dışarı çıkarılan skinler SA-MP kullanıcı belgeleri altına yazılır.
+
+## Antivirüs uyarısı
+
+Bazı antivirüs programları ASI dosyalarını Riskware, HackTool veya Trojan benzeri adlarla işaretleyebilir. Bunun nedeni, ASI'nin GTA işlemine yüklenmesi, oyun belleğine ve oyun dosyalarına erişmesi, Direct3D/SA-MP işlevleriyle birlikte çalışması ve ayar dosyaları oluşturmasıdır. Bu davranışlar kötü amaçlı yazılımlarda da görülebildiği için davranışsal taramalar yanlış pozitif üretebilir.
+
+Bu uyarı dosyanın kesin olarak virüs olduğu anlamına gelmez; aynı şekilde yalnızca bu açıklamaya bakarak güvenli olduğu da kabul edilmemelidir. Dosyayı kullanmadan önce:
+
+1. İndirdiğiniz dosyanın resmi GitHub Releases sayfasından geldiğini kontrol edin.
+2. Release sayfasındaki SHA-256 değeriyle dosyanızı karşılaştırın.
+3. VirusTotal ve kendi antivirüsünüzle ayrıca tarama yapın.
+4. Değiştirilmiş veya yeniden paketlenmiş ASI dosyalarını kullanmayın.
+
+ChatGPT, Claude veya Gemini gibi araçlar dosya hakkında açıklama yapabilir; ancak binary bir dosyanın virüssüz olduğunu kesin olarak kanıtlayamaz.
 
 ## Dağıtım içeriği
 
-Bu GitHub dağıtımında yalnızca aşağıdaki dosya bulunur:
+Bu depoda yalnızca aşağıdaki binary bulunur:
 
     velthyramp.asi
 
-Kaynak kodu, derleme betikleri, test dosyaları, debug sembolleri ve geliştiriciye özel yapılandırmalar dağıtıma dahil değildir.
+Kaynak kodu, derleme betikleri, test dosyaları, debug sembolleri ve geliştirici bilgisayarına ait yollar dağıtıma dahil değildir.
 
----
-
-## Güvenlik ve gizlilik
-
-- Bu depoda kaynak kodu veya geliştirici bilgisayarı bulunmaz.
-- Kullanıcı ayarları yalnızca kendi oyun klasöründeki data/velthyramp.ini dosyasına yazılır.
-- Sohbet arşivi ve model dosyaları kullanıcı bilgisayarında tutulur; bu ASI tarafından GitHub'a yüklenmez.
-- Eklentinin içine parola, token veya private key gömülmemelidir.
-- ASI dosyası binary olduğu için tersine mühendislik tamamen engellenemez; istemci içine gizli bilgi koymayın.
-
----
-
-## Changelog
+## Sürüm notları
 
 ### 1.0.0
 
-- ENG/TR dil seçimi kalıcı ayarlara bağlandı.
-- Dil seçimi data/velthyramp.ini içine yazılır.
-- Panel yeniden açıldığında son seçilen dil yüklenir.
-- Dil kayıt mesajları yerelleştirildi.
+- ENG/TR dil seçimi kalıcı hale getirildi.
+- Dil seçimi data/velthyramp.ini dosyasına yazılmaya başlandı.
+- Panel yeniden açıldığında son kullanılan dil yükleniyor.
+- Koyu temalı /vmp paneli düzenlendi.
+- Yerel model arama ve 3B önizleme eklendi.
+- Yakındaki skin ve obje listesi geliştirildi.
+- Model döndürme ve yakınlaştırma düğmeleri eklendi.
+- F10 HUD kontrolü, sohbet arşivi ve sunucu merkezi tamamlandı.
 
-### 0.9.0
+### 0.9.x
 
-- CEF'siz kapsamlı /vmp paneli.
-- Yerel ve yakındaki model önizlemesi.
+- İlk kapsamlı CEF'siz panel altyapısı.
+- Yerel model kataloğu ve DFF/TXD kontrolleri.
 - Oyuncu/model inceleme ekranları.
-- Sunucu merkezi ve çerçevesiz pencere yöneticisi.
 - Yakındaki model filtreleri.
-
-### 0.7.x
-
-- Model kataloglama ve DFF/TXD dışarı çıkarma.
-- Sohbet arşivi ve arama.
-- Ekran görüntüsü seçenekleri.
-- F10 HUD gizleme.
-- Ayarların kalıcı dosyaya taşınması.
-
----
+- Çerçevesiz pencere yöneticisi.
 
 ## Lisans ve destek
 
-VelthyraMP kapalı kaynak binary dağıtımıdır. Yeniden paketleme, dosyanın değiştirilmesi veya başka bir ürünün parçası olarak dağıtılması için proje sahibinin izni gerekir.
+VelthyraMP kapalı kaynak binary dağıtımıdır. Dosyanın değiştirilmiş veya yeniden paketlenmiş sürümlerini resmi sürüm olarak paylaşmayın.
 
-Hata bildirimlerinde GTA/SA-MP sürümünü, yüklü ASI/CLEO listesini ve çökme zamanını paylaşın. Kullanıcı adı, IP adresi ve özel dosya yollarını maskeleyin.
+Hata bildirirken GTA ve SA-MP sürümünü, kullandığınız ASI/CLEO modlarını ve hatanın ne zaman oluştuğunu yazın. Kullanıcı adınızı, IP adresinizi ve bilgisayarınızdaki özel klasör yollarını paylaşmadan önce mutlaka silin.
 
 ---
 
-*VelthyraMP Development Team — 2026*
+VelthyraMP Development Team — 2026
