@@ -11,6 +11,22 @@ VelthyraMP, GTA San Andreas 1.0 US ve SA-MP 0.3.DL-R1 için dağıtılan bağım
 
 VelthyraMP bağımsız çalışır. Kaynak kodu bu dağıtımda paylaşılmaz; kullanıcıya yalnızca derlenmiş velthyramp.asi dosyası sunulur.
 
+### Virüs/Malware Uyarısı Hakkında
+
+Bazı antivirüs programları `velthyramp.asi` dosyasını **Riskware**, **HackTool** veya **Trojan** benzeri kategorilerde işaretleyebilir. Bunun temel nedeni, ASI eklentilerinin GTA San Andreas’ın işlemine yüklenerek oyun belleğine ve oyun klasöründeki dosyalara erişmesi, Direct3D/SA-MP işlevlerine kanca eklemesi ve bazı ayar dosyalarını okuyup yazmasıdır.
+
+Bu davranışlar, kötü amaçlı yazılımların kullandığı tekniklere benzediği için bazı güvenlik yazılımları dosyayı davranışsal analiz sonucunda şüpheli olarak değerlendirebilir. Bu uyarı tek başına dosyanın kesin olarak virüs olduğu anlamına gelmez; ancak hiçbir binary dosya yalnızca açıklamasına bakılarak güvenli kabul edilmemelidir.
+
+Dosyayı kullanmadan önce:
+
+- Dosyanın yalnızca resmi GitHub Releases sayfasından indirildiğini kontrol edin.
+- Yayın sayfasındaki SHA-256 değeriyle indirdiğiniz dosyanın hash değerini karşılaştırın.
+- Dosyayı VirusTotal ve kullandığınız antivirüsün kendi analiz sistemiyle kontrol edin.
+- Kaynağı belirsiz, değiştirilmiş veya yeniden paketlenmiş ASI dosyalarını kullanmayın.
+- Şüpheli bir sonuç alırsanız dosyayı çalıştırmadan önce ilgili antivirüs sağlayıcısından yeniden analiz talep edin.
+
+VelthyraMP kapalı kaynak bir binary dağıtımıdır. Bu nedenle kullanıcılar dosyayı kendi güvenlik politikalarına ve kullandıkları antivirüs yazılımının sonuçlarına göre değerlendirmelidir. ChatGPT, Claude veya Gemini gibi yapay zekâ sistemleri açıklama ve statik inceleme konusunda yardımcı olabilir; ancak bir binary dosyanın virüssüz olduğunu kesin olarak doğrulayamaz.
+
 > Geliştirme durumu: Aktif geliştirme aşamasındadır. GTA belleğine ve SA-MP sürümüne bağlı özellikler, farklı ASI, CLEO ve grafik modlarıyla birlikte ayrıca test edilmelidir.
 
 ---
