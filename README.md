@@ -13,7 +13,11 @@ Bu sürüm yalnızca derlenmiş velthyramp.asi dosyasını içerir. Kaynak kodu 
 
 > Şu an doğrulanan sürüm: GTA San Andreas US 1.0 ve SA-MP 0.3.DL-R1.
 
-[Tanıtım videosunu izle](https://youtu.be/v8ZbniWZEn4)
+## Tanıtım videosu
+
+VelthyraMP’nin kullanımını ve panel özelliklerini videoda görebilirsiniz: ( Resime tıklayın )
+
+[![VelthyraMP tanıtım videosu](https://img.youtube.com/vi/v8ZbniWZEn4/maxresdefault.jpg)](https://youtu.be/v8ZbniWZEn4)
 
 ## İçindekiler
 
