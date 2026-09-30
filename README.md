@@ -122,14 +122,8 @@ Favori sunucular data/velthyramp_servers.dat içinde tutulur. Sohbet kayıtları
 
 Bazı antivirüs programları ASI dosyalarını Riskware, HackTool veya Trojan benzeri adlarla işaretleyebilir. Bunun nedeni, ASI'nin GTA işlemine yüklenmesi, oyun belleğine ve oyun dosyalarına erişmesi, Direct3D/SA-MP işlevleriyle birlikte çalışması ve ayar dosyaları oluşturmasıdır. Bu davranışlar kötü amaçlı yazılımlarda da görülebildiği için davranışsal taramalar yanlış pozitif üretebilir.
 
-Bu uyarı dosyanın kesin olarak virüs olduğu anlamına gelmez; aynı şekilde yalnızca bu açıklamaya bakarak güvenli olduğu da kabul edilmemelidir. Dosyayı kullanmadan önce:
-
-1. İndirdiğiniz dosyanın resmi GitHub Releases sayfasından geldiğini kontrol edin.
-2. Release sayfasındaki SHA-256 değeriyle dosyanızı karşılaştırın.
-3. VirusTotal ve kendi antivirüsünüzle ayrıca tarama yapın.
-4. Değiştirilmiş veya yeniden paketlenmiş ASI dosyalarını kullanmayın.
-
-ChatGPT, Claude veya Gemini gibi araçlar dosya hakkında açıklama yapabilir; ancak binary bir dosyanın virüssüz olduğunu kesin olarak kanıtlayamaz.
+Bu uyarı dosyanın kesin olarak virüs olduğu anlamına gelmez.
+ChatGPT, Claude veya Gemini gibi araçlar ile dosya hakkında detaylı açıklama ve bilgi alabilirsiniz.
 
 ## Dağıtım içeriği
 
