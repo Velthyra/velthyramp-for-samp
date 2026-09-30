@@ -29,6 +29,7 @@ VelthyraMP’nin kullanımını ve panel özelliklerini videoda görebilirsiniz:
 - Antivirüs uyarısı
 - Sürüm notları
 - Lisans ve destek
+- İletişim
 
 ## Neler var?
 
@@ -165,6 +166,11 @@ Kaynak kodu, derleme betikleri, test dosyaları, debug sembolleri ve geliştiric
 VelthyraMP kapalı kaynak binary dağıtımıdır. Dosyanın değiştirilmiş veya yeniden paketlenmiş sürümlerini resmi sürüm olarak paylaşmayın.
 
 Hata bildirirken GTA ve SA-MP sürümünü, kullandığınız ASI/CLEO modlarını ve hatanın ne zaman oluştuğunu yazın. Kullanıcı adınızı, IP adresinizi ve bilgisayarınızdaki özel klasör yollarını paylaşmadan önce mutlaka silin.
+
+## İletişim
+
+VelthyraMP hakkında öneri, hata bildirimi veya destek talebi için Discord üzerinden ulaşabilirsiniz.
+**Discord:** `velthyrajs`
 
 ---
 
